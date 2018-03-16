@@ -1,5 +1,4 @@
 ## Core latex/pdflatex auxiliary files:
-.DS_Store
 *.aux
 *.lof
 *.log
@@ -219,3 +218,10 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+
+# Mac Nonsense
+.DS_Store
+
+# VIM faffery
+*.swp
+*.swo
