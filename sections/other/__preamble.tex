@@ -1,0 +1,73 @@
+
+% This is the user manual for UICTHESI CLS, originally found
+% at https://www.math.uic.edu/graduate/current/uicthesi, and
+% modified by Pete Snyder <snyder@gmail.com> to match the
+% current department requirements.
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{newlfont}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{euler}
+\usepackage[xindy={glsnumbers=false},nonumberlist,acronym,nopostdot,nogroupskip,nomain]{glossaries}
+\usepackage{xspace}
+\usepackage[htt]{hyphenat}
+\usepackage{float}
+\usepackage{flushend}
+\usepackage{footnote}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{graphicx}
+
+\newglossarystyle{clong}{%
+ \renewenvironment{theglossary}%
+     {\begin{longtable}{p{.2\linewidth}p{.8\linewidth}}}%
+     {\end{longtable}}%
+  \renewcommand*{\glossaryheader}{}%
+  \renewcommand*{\glsgroupheading}[1]{}%
+  \renewcommand*{\glossaryentryfield}[5]{%
+    \glstarget{##1}{##2} & ##3\glspostdescription\space ##5\\}%
+  \renewcommand*{\glossarysubentryfield}[6]{%
+     & \glstarget{##2}{\strut}##4\glspostdescription\space ##6\\}%
+  %\renewcommand*{\glsgroupskip}{ & \\}%
+}
+
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+
+\input{sections/other/__abbrs}
+\def\new@fontshape#1#2#3#4#5{\expandafter
+     \edef\csname#1/#2/#3\endcsname{\expandafter\noexpand
+                                 \csname #4\endcsname}}
+\new@fontshape{cmr}{bx}{sc}{
+      <5>cmcsc8 at 5pt%
+      <6>cmcsc8 at 6pt%
+      <7>cmcsc8 at 7pt%
+      <8>cmcsc8%
+      <9>cmcsc9%
+      <10>cmcsc10%
+      <11>cmcsc10 at 10.95pt%
+      <12>cmcsc10 at 12pt%
+      <14>cmcsc10 at 14.4pt%
+      <17>cmcsc10 at 17.28%
+      <20>cmcsc10 at 20.736pt%
+      <25>cmcsc10 at 24.8832pt%
+      }{}
+\mathversion{normal}
+\newcommand{\ams}{{$\cal{A}\cal{M}\cal{S}$}}
+\newcommand{\amslatex}{{$\cal{A}\cal{M}\cal{S}$-\LaTeX{}}}
+\newcommand{\amstex}{{$\cal{A}\cal{M}\cal{S}$-\TeX{}}}
+\newcommand{\BibTeX}{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\newcommand{\uicthesi}{{$\mathbb{UICTHESI}$}}
+
+\newcommand\bs{\char '134 }   % A backslash character for \tt font
+\newcommand{\lb}{\char '173 } % A left brace character for \tt font
+\newcommand{\rb}{\char '175 } % A right brace character for \tt font
+
+% one or two other commands
+\def\newfont#1#2{\@ifdefinable #1{\font #1=#2\relax}}
+\def\symbol#1{\char #1\relax}
+
+\makeglossaries

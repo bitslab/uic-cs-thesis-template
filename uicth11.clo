@@ -1,0 +1,420 @@
+% This is the default font size dependent style option file for use
+% with the UICTHESI STY style file for thesis formatting at UIC.
+% To use it please enter the line \verb+\documentstyle{uicthesi}+.
+% This file an adoptation of the Report Document style for
+% \LaTeX\ version 2.09 Copyright (C) 1988 by Leslie Lamport and
+% for use with the new Font Selection Scheme that accompanied \TeX\
+% version 3.1 at UIC.
+%
+% First Edition:
+% Paul Davis, UIC Computer Center, 31 December 1991.
+%
+% Changes to this file:
+%  (should be described here)
+%  (remember to update the filedate and fileversion as needed.)
+%
+% Changed \itemsep to 0. Formerly, the extra space resulted in
+%   triple-spacing in list environments.
+% Paul Davis, UIC Computer Center, 8 Jun 1992.(b)
+%
+% This file has been updated to work under \LaTeX\ version 2e.
+% Wherever possible or necessary I have substituted the appropriate
+% \LaTeX\ version 2e command for the old commands that didn't work.
+% As I started this project with little prior knowledge there may
+% be bugs or other mistakes, so please feel free to add corrections
+% and enhancements as seen fit. I used the University of California
+% thesis style class ucthesis.cls and associated files as guides in
+% this effort. Those are available from any CTAN archive.
+%
+% Thomas McKibben, UIC Dept. of Physics, January 1996.
+%
+%
+% First, announce ourselves.
+
+\typeout{Loading uicth11.clo...}
+
+\renewcommand{\normalsize}{\fontsize\@xipt{13.6}\selectfont%
+\abovedisplayskip 11\p@ plus3\p@ minus6\p@
+\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip  \z@ plus3\p@   
+\belowdisplayshortskip  6.5\p@ plus3.5\p@ minus3\p@
+\let\@listi\@listI}   % Setting of \@listi added 9 Jun 87
+
+\newcommand{\small}{\fontsize\@xpt{12}\selectfont%
+\abovedisplayskip 10\p@ plus2\p@ minus5\p@
+\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip  \z@ plus3\p@   
+\belowdisplayshortskip  6\p@ plus3\p@ minus3\p@
+\def\@listi{\leftmargin\leftmargini %% Added 22 Dec 87
+\topsep 6\p@ plus2\p@ minus2\p@\parsep 3\p@ plus2\p@ minus\p@
+\itemsep \parsep}}
+
+ 
+\def\footnotesize{
+   \@setsize\footnotesize{11pt}\ixpt\@ixpt
+   \abovedisplayskip 8pt plus 2pt minus 4pt
+   \belowdisplayskip \abovedisplayskip
+   \abovedisplayshortskip \z@ plus 1pt
+   \belowdisplayshortskip 4pt plus 2pt minus 2pt
+   \def\@listi{
+      \leftmargin\leftmargini
+      \topsep 4pt plus 2pt minus 2pt
+      \parsep 2pt plus 1pt minus 1pt
+      \itemsep 0pt}}
+ 
+\def\scriptsize{
+   \@setsize\scriptsize{9.5pt}\viiipt\@viiipt}
+\def\tiny{
+   \@setsize\tiny{7pt}\vipt\@vipt}
+\def\large{
+   \@setsize\large{14pt}\xiipt\@xiipt}
+\def\Large{
+   \@setsize\Large{18pt}\xivpt\@xivpt}
+\def\LARGE{
+   \@setsize\LARGE{22pt}\xviipt\@xviipt}
+\def\huge{
+   \@setsize\huge{25pt}\xxpt\@xxpt}
+\def\Huge{
+   \@setsize\Huge{30pt}\xxvpt\@xxvpt}
+\normalsize
+%    \end{macrocode}
+% \section{Floats}
+% A float is something like a figure or table.
+%
+% \subsection{Floats on a Text Page}
+%    \begin{macrocode}
+\floatsep 60pt plus 2pt minus 2pt     % Space between adjacent floats
+                                      % moved to top or bottom of text
+                                      % page.
+\textfloatsep 60pt plus 2pt minus 4pt % Space between main text and
+                                      % floats at top or bottom of page.
+\intextsep 60pt plus 2pt minus 2pt    % Space between in-text figures and
+                                      % text.
+%\@maxsep 75pt                         % The maximum of \floatsep,
+                                      % \textfloatsep and \intextsep
+                                      % (minus the stretch and shrink).
+%    \end{macrocode}
+% \subsection{For Floats on a Separate Float Page}
+%    \begin{macrocode}
+\@fptop 0pt plus 1fil    % Stretch at top of float page/column. (Must be
+                         % 0pt plus ...)
+\@fpsep 60pt plus 2fil   % Space between floats on float page/column.
+\@fpbot 0pt plus 1fil    % Stretch at bottom of float page/column. (Must
+                         % be 0pt plus ... )
+%    \end{macrocode}
+% \subsection{Marginal Notes}
+%    \begin{macrocode}
+\marginparpush 5pt       % Minimum vertical separation between two marginal
+                         % notes.
+%    \end{macrocode}
+% \section{Paragraphing}
+%    \begin{macrocode}
+\parskip 0pt plus 1pt              % Extra vertical space between paragraphs.
+\parindent 17pt                    % Width of paragraph indentation.
+\partopsep 3pt plus 1pt minus 2pt  % Extra vertical space, in addition to
+                                   % \verb+\parskip+ and \verb+\topsep+, added w
+                                   % leaves blank line before environment.
+%    \end{macrocode}
+% See \verb+\@listI+ for values of \verb+\topsep+ and \verb+\itemsep+.
+% The following page-breaking penalties are defined
+%    \begin{macrocode}
+ 
+\@lowpenalty   51      % Produced by \nopagebreak[1] or \nolinebreak[1]
+\@medpenalty  151      % Produced by \nopagebreak[2] or \nolinebreak[2]
+\@highpenalty 301      % Produced by \nopagebreak[3] or \nolinebreak[3]
+ 
+\@beginparpenalty -\@lowpenalty    % Before a list or paragraph environment.
+\@endparpenalty   -\@lowpenalty    % After a list or paragraph environment.
+\@itempenalty     -\@lowpenalty    % Between list items.
+%    \end{macrocode}
+ 
+% \verb+\clubpenalty+         % 'Club line'  at bottom of page.
+% \verb+\widowpenalty+        % 'Widow line' at top of page.
+% \verb+\displaywidowpenalty+ % Math display widow line.
+% \verb+\predisplaypenalty+   % Breaking before a math display.
+% \verb+\postdisplaypenalty+  % Breaking after a math display.
+% \verb+\interlinepenalty+    % Breaking at a line within a paragraph.
+% \verb+\brokenpenalty+       % Breaking after a hyphenated line.
+%
+% \section{Lists}
+%
+% The following commands are used to set the default values for the list
+% environment's parameters. See the \LaTeX\ manual for an explanation of
+% the meanings of the parameters.  Defaults for the list environment are
+% set as follows.  First, \verb+\rightmargin+, \verb+\listparindent+
+% and \verb+\itemindent+ are set to 0pt.
+% Then, for a Kth level list, the command \verb+\@listK+ is
+% called, where 'K' denotes 'i', 'ii', ... , 'vi'.
+% (I.e., \verb+\@listiii+ is called for a third-level list.)
+% By convention, \verb+\@listK+ should set
+% \verb+\leftmargin+ to \verb+\leftmarginK+.
+%
+% For efficiency, level-one list's values are defined at top level, and
+% \verb+\@listi+ is defined to set only \verb+\leftmargin+.
+%    \begin{macrocode}
+ 
+\leftmargini 2.5em
+\leftmarginii 2.2em
+\leftmarginiii 1.87em
+\leftmarginiv 1.7em
+\leftmarginv 1em
+\leftmarginvi 1em
+ 
+\leftmargin\leftmargini
+\labelsep .5em
+\labelwidth\leftmargini\advance\labelwidth-\labelsep
+%    \end{macrocode}
+% \verb+\@listI+ defines top level and \verb+\@listi+ values of
+% \verb+\leftmargin+, \verb+\topsep+, \verb+\parsep+, and \verb+\itemsep+
+%    \begin{macrocode}
+\def\@listI{\leftmargin\leftmargini \parsep 4.5pt plus 2pt minus 1pt%
+\topsep 9pt plus 3pt minus 5pt%
+\itemsep 0pt plus 2pt minus 1pt}
+ 
+\let\@listi\@listI
+\@listi
+ 
+\def\@listii{\leftmargin\leftmarginii
+   \labelwidth\leftmarginii\advance\labelwidth-\labelsep
+   \topsep 4.5pt plus 2pt minus 1pt
+   \parsep 2pt plus 1pt minus 1pt
+   \itemsep 0pt}
+ 
+\def\@listiii{\leftmargin\leftmarginiii
+    \labelwidth\leftmarginiii\advance\labelwidth-\labelsep
+    \topsep 2pt plus 1pt minus 1pt
+    \parsep \z@ \partopsep 1pt plus 0pt minus 1pt
+    \itemsep 0pt}
+ 
+\def\@listiv{\leftmargin\leftmarginiv
+     \labelwidth\leftmarginiv\advance\labelwidth-\labelsep}
+ 
+\def\@listv{\leftmargin\leftmarginv
+     \labelwidth\leftmarginv\advance\labelwidth-\labelsep}
+ 
+\def\@listvi{\leftmargin\leftmarginvi
+     \labelwidth\leftmarginvi\advance\labelwidth-\labelsep}
+%    \end{macrocode}
+
+%
+% BEGIN DEFINITIONS
+%
+% \subsubsection{Generic Bold Definition}
+% This defines a generic bold default series to be used in the definition for
+% chapter for example. This definition will cause an emphasized word
+% in the title section to be printed in slanted bold instead of roman bold.
+% Only works with the new font definition scheme!
+%    \begin{macrocode}
+%\def\transparentbold{\def\default@series{bx}\bf}
+%    \end{macrocode}
+\def\transparentbold{\bfseries} % TMcK 1996
+%
+% \subsubsection{Underlining}
+% Hey, it works!
+%    \begin{macrocode}
+\newbox\ustrutbox
+ 
+\setbox\ustrutbox=\hbox{\vrule height8.5pt depth3.2pt width0pt}
+ 
+\def\ustrut{\relax\ifmmode\copy\ustrutbox\else\unhcopy\ustrutbox\fi}
+ 
+\def\underl#1 {\leavevmode\let\first=\relax\underli #1 }
+\def\underli#1 {\ifx&#1\let\next=\relax\unskip
+  \else\let\next=\underli\first\ulinebox{#1}\fi\let\first=\undersp\next}
+\def\undersp{\penalty50\ulinebox{\space}\penalty50}
+\def\ulinebox#1{\vtop{\hbox{\ustrut#1}\hrule}}
+%    \end{macrocode}
+
+
+% \section{Definitions}
+% The next line defines a flag to detect
+% when we started the body, the chapter macro (numbered) checks this flag.
+% If it was false it changes to arabic pagenumbering and sets it to one.
+% If it is already true it does not do anything.
+%    \begin{macrocode}
+\newif\if@startedbodyyet\@startedbodyyetfalse
+\newif\if@startedappendices\@startedappendicesfalse
+\newif\if@multappendices\@multappendicesfalse
+\newif\if@isatable\@isatablefalse
+\newif\if@nowarning       % New if to test if we need to issue a
+\@nowarningtrue           % warning during footnote placement.
+\newif\if@bibforma\@bibformafalse
+\newcount\c@fnref
+\newcount\out@fnpage@count
+\out@fnpage@count=1
+\newif\ifabseqnumbering\abseqnumberingfalse
+ 
+\def\today{\ifcase\month\or
+  January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or December\fi
+  \space\number\day, \number\year}
+%    \end{macrocode}
+
+% \subsubsection{Page Numbering at Top}
+% In this section we will redefine the running title, so that only the
+% page number is printed. This can be achieved with a pagestyle which
+% only prints the page at the top (like plain prints at the bottom).
+%    \begin{macrocode}
+\def\ps@pageontop{
+   \def\@oddhead{\rmfamily\hfil\thepage}
+   \let\@evenhead\@oddhead
+   \def\@oddfoot{}
+   \let\@evenfoot\@oddfoot}
+%    \end{macrocode}
+%
+% \subsubsection{Page Numbering at Bottom}
+%    \begin{macrocode}
+\def\ps@pageonbottom{
+   \def\@oddhead{}
+   \def\@evenhead{}
+   \def\@oddfoot{\rmfamily\hfil\thepage\hfil}
+   \let\@evenfoot\@oddfoot}
+%    \end{macrocode}
+%
+
+%
+% END DEFINITIONS
+%
+
+%
+% BEGIN PAGE LAYOUT
+%
+% \section{Page Layout}
+% \subsection{Page Definition}
+% Now, lets do the page settings.
+% Margins are 1.25 inch on the left side and 1 inch on the right.
+%    \begin{macrocode}
+\oddsidemargin=0.25in
+\evensidemargin=0.25in
+\textwidth=6.25in
+\def\innerheadskip{12pt}
+\headheight=32pt
+\headsep=30pt                  % area between the heading and the text
+\footskip=20pt
+\textheight=9in                % height of the physical page
+\advance \textheight by -\headheight
+\advance \textheight by -\headsep
+\advance \textheight by -\footskip
+\mark{{}{}}                    % Initializes TeX's marks
+%\@twosidefalse                 % Default is one-sided printing.
+\pagestyle{pageonbottom}
+\pagestyle{plain}
+\pagenumbering{roman}
+%    \end{macrocode}
+%
+% The pagenumbering is set to roman because that is what the preliminary
+% pages should be numbered with.
+%    \begin{macrocode}
+\@afterindenttrue
+\looseness=1
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+%    \end{macrocode}
+%
+% \subsection{Line Spacing}
+% Set up double spacing
+%    \begin{macrocode}
+\def\baselinestretch{2}
+%    \end{macrocode}
+%
+% New command \verb+\setstretch+ (slightly more mnemonic...
+% and easier to type)
+%    \begin{macrocode}
+\def\setstretch#1{\renewcommand{\baselinestretch}{#1}}
+%    \end{macrocode}
+%
+% A single spaced quote (say) is done by surrounding singlespace with quote.
+%    \begin{macrocode}
+\def\singlespace{
+   \vskip\parskip\vskip\baselineskip
+   \def\baselinestretch{1}
+   \baselineskip\f@baselineskip\relax
+   \baselineskip\baselinestretch\baselineskip
+   \setbox\strutbox\hbox{
+      \vrule\@height.7\baselineskip\@depth.3\baselineskip \@width\z@}
+   \normalbaselineskip\baselineskip
+   \glb@settings \the\every@math@size
+   \aftergroup\glb@settings
+   \vskip-\parskip
+   \vskip-\baselineskip}
+ 
+\def\endsinglespace{\par}
+%    \end{macrocode}
+%
+%  Spacing, doublespace and onehalfspace all are meant to INCREASE the
+%  spacing (i.e. calling onehalfspace from within doublespace will not
+%  produce a graceful transition between spacings)
+%    \begin{macrocode}
+\def\spacing#1{
+   \par
+   \def\baselinestretch{#1}
+   \baselineskip\f@baselineskip\relax
+   \baselineskip\baselinestretch\baselineskip
+   \setbox\strutbox\hbox{
+      \vrule\@height.7\baselineskip\@depth.3\baselineskip \@width\z@}
+   \normalbaselineskip\baselineskip
+   \glb@settings \the\every@math@size
+   \aftergroup\glb@settings
+   \vskip-\parskip
+   \vskip-\baselineskip}
+ 
+\def\endspacing{
+   \par
+   \vskip \parskip
+   \vskip \baselineskip
+   \endgroup
+   \vskip -\parskip
+   \vskip -\baselineskip
+   \begingroup}
+ 
+\def\onehalfspace{\spacing{1.5}}
+\let\endonehalfspace=\endspacing
+ 
+\def\doublespace{\spacing{2}}
+\let\doublespace=\endspacing
+%    \end{macrocode}
+%
+% Fix up spacing before and after displayed math
+% (arraystretch seems to do a fine job for inside LaTeX displayed math,
+% since array and eqnarray seem to be affected as expected)
+% Changing \baselinestretch and doing a font change also works if done here,
+% but then you have to change @setsize to remove the call to @nomath)
+%    \begin{macrocode}
+\everydisplay{
+   \abovedisplayskip \baselinestretch\abovedisplayskip
+   \belowdisplayskip \abovedisplayskip
+   \abovedisplayshortskip \baselinestretch\abovedisplayshortskip
+   \belowdisplayshortskip \baselinestretch\belowdisplayshortskip}
+%    \end{macrocode}
+%
+% \subsection{Running Titles}
+% \subsubsection{Front Matter Continuation Headings}
+% This is the page style needed to print the headers in subsequent pages
+% of the front matter pages other than the table of contents and the
+% lists of figures and tables.
+% The line that has a \verb+\vbox to 24pt{}+
+% was set to use the \verb+\baselineskip+ but the baselineskip is set
+% to zero and therefore cannot be used.
+%    \begin{macrocode}
+\def\ps@continued{
+   \def\@oddhead{\headmark}
+   \let\@evenhead\@oddhead
+   \def\@oddfoot{\rmfamily\normalsize\hfil\thepage\hfil}
+   \let\@evenfoot\oddfoot}
+%    \end{macrocode}
+%
+% \subsubsection{Appendix Continuation Headings}
+% This is the page style needed to print the headers in subsequent pages
+% of the appendix.
+%    \begin{macrocode}
+\def\ps@appendixcontinued{
+   \def\@oddhead{\headmark}
+   \let\@evenhead\@oddhead
+   \def\@oddfoot{}
+   \let\@evenfoot\oddfoot}
+%    \end{macrocode}
+%
+% END PAGE LAYOUT
+%
