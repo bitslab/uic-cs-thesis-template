@@ -1,4 +1,4 @@
-Sample UIC LaTeX Thesis Template
+Sample UIC Computer Science LaTeX Thesis Template
 ===
 
 
