@@ -68,4 +68,4 @@ Other Resources
 
 Author
 ---
-Pete Snyder <snyderp@gmail.com>
+Pete Snyder / https://www.peteresnyder.com
