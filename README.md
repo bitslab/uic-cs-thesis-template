@@ -5,7 +5,7 @@ Sample UIC Computer Science LaTeX Thesis Template
 Purpose
 ---
 This is intended to be a useful starting point for writing a PhD thesis at
-UIC.  Its meant to replace the mix of outdated latex files, PDFs and websites
+UIC. Its meant to replace the mix of outdated LaTeX files, PDFs and websites
 that used to, collectively, define what was needed.
 
 
@@ -14,37 +14,41 @@ Outline
 This template is broken up so you should only need to change a couple of
 files, but mostly not muck withe the layout / formatting / etc parts.
 
--   `thesis.tex`: Edit this to fill in the title of your thesis, you name,
+-   `thesis.tex`: Edit this to fill in the title of your thesis, your name,
     information about any degrees you currently hold, and your committee.
     You'll also have to add references to the chapters and sections that'll
     make up the body of the thesis.
 -   `sections/other/__commands.tex`: A place to add any custom commands
-    you'll use in your thesis.  *Don't* use commands for abbreviations though,
+    you'll use in your thesis. *Don't* use commands for abbreviations though,
     those go in the next section.
 -   `sections/other/__preamble.tex`: You likely won't need to make changes
     to this, but this contains all the stuff that goes before the
-    document section of your paper, so its where you'd add references to
+    document section of your paper; it is where you'd add references to
     any additional packages you need.
 -   `sections/other/__abbrs.tex`: Define all the acronyms you'll use in the
-    paper in this file, using the format defined in the "glossaries" package.
+    paper in this file, using the format defined in the
+    "[glossaries](https://ctan.org/pkg/glossaries)" package (additional
+    [documentation](https://www.overleaf.com/learn/latex/Glossaries).
     Abbreviations added here, and used in the body of your thesis, will
     automatically be formatted correctly to create the "Abbreviations"
     section of your thesis.
 -   `sections/other/{_1_dedication.tex, _3_contribution_of_authors.tex, _4_summary.tex}`:
     These files map on to the sections of the thesis you'd expect, with the
-    template handing the formatting and placement of each page.  All you
-    need to do is add the relevant text.
+    template handling the formatting and placement of each page. All you
+    need to do is write the relevant text.
 -   `sections/other/_2_acknowledgement.tex`: This section is just like the
-    above, for the most part.  Just add text describing who you'd like
-    to acknowledge, and how.  Just don't forget to add the `\initials{XXX}`
+    above, for the most part; Just add text describing who you'd like
+    to acknowledge, and how. Don't forget to add the `\initials{XXX}`
     line to the bottom of the file.
--   `tables/*`, `figures/*`: Just a suggestions on how / where to store your
-    tex table and figure files.
+-   `tables/*`, `figures/*`: Just a suggestions on where to store your
+    table and figure files.
 
 
 Building
 ---
-You'll need `latexmk`, `makeglossaries` and `pdflatex` on your system,
+You'll need `[latexmk](https://ctan.org/pkg/latexmk?lang=en)`,
+`[makeglossaries](https://ctan.org/pkg/glossaries)` and
+`[pdflatex](https://www.tug.org/texlive/)` on your system,
 along with a pretty standard set of latex packages.  Once thats the case,
 building the PDF should just be a `make clean && make`.
 
